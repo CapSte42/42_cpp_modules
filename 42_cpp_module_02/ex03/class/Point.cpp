@@ -6,7 +6,7 @@
 /*   By: smontuor <smontuor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 22:22:11 by smontuor          #+#    #+#             */
-/*   Updated: 2024/09/04 10:28:07 by smontuor         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:26:30 by smontuor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,10 @@ Fixed const &Point::getY(void) const
 {
 	dbgPrint("getY member function called");
 	return _y;
+}
+
+bool Point::operator==(const Point &rhs) const
+{
+	dbgPrint("Equality operator called");
+	return (_x == rhs._x && _y == rhs._y);
 }

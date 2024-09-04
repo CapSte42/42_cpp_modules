@@ -6,7 +6,7 @@
 /*   By: smontuor <smontuor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 22:19:28 by smontuor          #+#    #+#             */
-/*   Updated: 2024/09/04 10:25:48 by smontuor         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:26:19 by smontuor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class Point
 
 		Fixed const &getX(void) const;
 		Fixed const &getY(void) const;
+
+		bool operator==(const Point &rhs) const;
 };
 
 #endif // POINT_HPP
