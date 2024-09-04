@@ -6,7 +6,7 @@
 /*   By: smontuor <smontuor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 22:08:24 by smontuor          #+#    #+#             */
-/*   Updated: 2024/09/04 12:26:42 by smontuor         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:32:04 by smontuor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	main(void)
 			phoneBook.add();
 		else if (command == "SEARCH")
 			phoneBook.search();
+		else if (command == "AUTOFILL")
+			phoneBook.autofill();
 		else
 			std::cout << "Invalid command." << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: smontuor <smontuor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 14:10:14 by smontuor          #+#    #+#             */
-/*   Updated: 2024/09/04 12:26:55 by smontuor         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:33:18 by smontuor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ void	PhoneBook::setContact(const Contact &contact)
 	else
 	{
 		std::cout << "Phone book is full." << std::endl;
+		std::cout << "The oldest contact will be eliminated." << std::endl;
+		for (int i = 0; i < 7; i++)
+			_contacts[i] = _contacts[i + 1];
+		_contacts[7] = contact;
 	}
 }
 
@@ -122,6 +126,25 @@ void	PhoneBook::search()
 	}
 	contacts[index - 1].display();
 	handleEof(std::cin);
+}
+
+void	PhoneBook::autofill()
+{
+	Contact	contact[8] = {
+		Contact("John", "Doe", "JD", "1234567890", "I am John Doe."),
+		Contact("Jane", "Doe", "Jane", "0987654321", "I am Jane Doe."),
+		Contact("John", "Smith", "Smithy", "1231231234", "I am John Smith."),
+		Contact("Jane", "Smith", "Janey", "3213214321", "I am Jane Smith."),
+		Contact("John", "Johnson", "JJ", "1112223333", "I am John Johnson."),
+		Contact("Jane", "Johnson", "JJ", "3332221111", "I am Jane Johnson."),
+		Contact("John", "Doe", "JD", "1234567890", "I am John Doe."),
+		Contact("Jane", "Doe", "Jane", "0987654321", "I am Jane Doe.")
+	};
+
+	for (int i = 0; i < 8; i++)
+		this->setContact(contact[i]);
+	this->setIndex(8);
+	std::cout << "Phone book autofilled." << std::endl;
 }
 
 void	handleEof(std::istream &inputStream)

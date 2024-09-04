@@ -6,7 +6,7 @@
 /*   By: smontuor <smontuor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 14:12:32 by smontuor          #+#    #+#             */
-/*   Updated: 2024/09/04 12:24:08 by smontuor         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:29:41 by smontuor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ class PhoneBook
 	// member functions
 	void			add();
 	void			search();
+	void			autofill();
 };
 
 void	handleEof(std::istream &inputStream);
