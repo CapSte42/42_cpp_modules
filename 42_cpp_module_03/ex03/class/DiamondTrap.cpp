@@ -6,7 +6,7 @@
 /*   By: smontuor <smontuor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:48:14 by smontuor          #+#    #+#             */
-/*   Updated: 2024/09/03 23:19:32 by smontuor         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:44:49 by smontuor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ void DiamondTrap::setName(std::string name)
 // Public member functions
 void DiamondTrap::whoAmI(void)
 {
-	std::cout << "I am " << _name << " and my ClapTrap name is " << ClapTrap::getName() << std::endl;
+	if (amIOk())
+		std::cout << "I am " << _name << " and my ClapTrap name is " << ClapTrap::getName() << std::endl;
 }
 
 void DiamondTrap::attack(std::string const &target)
