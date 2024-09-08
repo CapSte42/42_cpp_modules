@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 14:12:44 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/08 15:57:54 by smontuor42       ###   ########.fr       */
+/*   Created: 2024/09/08 14:14:28 by smontuor42        #+#    #+#             */
+/*   Updated: 2024/09/08 16:11:36 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#include "../includes/Cat.hpp"
+#include <iostream>
 
-# include "Animal.hpp"
+Cat::Cat() : Animal("Cat") {}
 
-class Dog : public Animal
+Cat::Cat(const Cat &src) : Animal(src) {}
+
+Cat::~Cat() {}
+
+Cat		&Cat::operator=(const Cat &rhs)
 {
-	public:
+	Animal::operator=(rhs);
+	return *this;
+}
 
-		Dog();
-		Dog(const Dog &src);
-		virtual ~Dog();
-
-		Dog				&operator=(const Dog &rhs);
-
-		virtual void	makeSound() const;
-};
-
-#endif
+void	Cat::makeSound() const
+{
+	print(BOLDWHITE + getType(), ": Meows");
+}

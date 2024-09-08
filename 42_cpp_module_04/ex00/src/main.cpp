@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 14:12:44 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/08 15:57:54 by smontuor42       ###   ########.fr       */
+/*   Created: 2024/09/08 15:49:25 by smontuor42        #+#    #+#             */
+/*   Updated: 2024/09/08 16:12:17 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#include "../includes/Animal.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/Dog.hpp"
 
-# include "Animal.hpp"
+#include <iostream>
 
-class Dog : public Animal
+int main()
 {
-	public:
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-		Dog();
-		Dog(const Dog &src);
-		virtual ~Dog();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
 
-		Dog				&operator=(const Dog &rhs);
+	i->makeSound();
+	j->makeSound();
 
-		virtual void	makeSound() const;
-};
-
-#endif
+	delete j;
+	delete i;
+	return 0;
+}
