@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 15:49:25 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/08 19:38:40 by smontuor42       ###   ########.fr       */
+/*   Created: 2024/09/08 23:36:01 by smontuor42        #+#    #+#             */
+/*   Updated: 2024/09/08 23:45:09 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
-#include "../includes/Cat.hpp"
-#include "../includes/Dog.hpp"
+#ifndef CURE_HPP
+# define CURE_HPP
 
-#include <iostream>
+# include "AMateria.hpp"
 
-int main()
+class Cure : public AMateria
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	public:
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+		Cure();
+		Cure(const Cure &src);
+		virtual ~Cure();
 
-	i->makeSound();
-	j->makeSound();
+		Cure		&operator=(const Cure &rhs);
 
-	delete j;
-	delete i;
+		AMateria	*clone() const;
+		void		use(ICharacter &target);
+};
 
-	// This will not compile
-	//const Animal* meta = new Animal();
-}
+#endif

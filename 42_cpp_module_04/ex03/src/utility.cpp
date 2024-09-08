@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utility.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 15:49:25 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/08 19:38:40 by smontuor42       ###   ########.fr       */
+/*   Created: 2024/09/08 20:19:43 by smontuor42        #+#    #+#             */
+/*   Updated: 2024/09/08 20:27:30 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
-#include "../includes/Cat.hpp"
-#include "../includes/Dog.hpp"
-
+#include "../includes/utility.hpp"
 #include <iostream>
 
-int main()
+void	dbgprint(std::string color, std::string msg)
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-
-	i->makeSound();
-	j->makeSound();
-
-	delete j;
-	delete i;
-
-	// This will not compile
-	//const Animal* meta = new Animal();
+	if (DEBUG == 1)
+		std::cout << color << msg << RESET << std::endl;
+}
+		
+void	print(std::string color, std::string msg)
+{
+	std::cout << color << msg << RESET << std::endl;
 }
