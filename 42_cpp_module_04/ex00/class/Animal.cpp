@@ -6,7 +6,7 @@
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:14:05 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/08 15:58:25 by smontuor42       ###   ########.fr       */
+/*   Updated: 2024/09/08 17:24:46 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Animal::Animal() : _type("Animal")
 
 Animal::Animal(std::string type) : _type(type)
 {
-	dbgprint(BOLDYELLOW + _type, "'s type constructor called");
+	std::string defaultType = "Animal";
+	dbgprint(BOLDYELLOW + defaultType, "'s type constructor called");
 }
 
 Animal::Animal(const Animal &src) : _type(src._type)
@@ -30,7 +31,8 @@ Animal::Animal(const Animal &src) : _type(src._type)
 
 Animal::~Animal()
 {
-	dbgprint(BOLDRED + _type, "'s destructor called");
+	std::string defaultType = "Animal";
+	dbgprint(BOLDRED + defaultType, "'s destructor called");
 }
 
 Animal	&Animal::operator=(const Animal &rhs)
@@ -58,4 +60,9 @@ void			Animal::dbgprint(std::string type, std::string msg) const
 void			Animal::print(std::string type, std::string msg) const
 {
 	std::cout << type << msg << RESET << std::endl;
+}
+
+void			Animal::makeSound() const
+{
+	print(BOLDWHITE + _type, " makes a sound");
 }

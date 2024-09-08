@@ -6,7 +6,7 @@
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 09:39:04 by smontuor          #+#    #+#             */
-/*   Updated: 2024/09/08 16:00:42 by smontuor42       ###   ########.fr       */
+/*   Updated: 2024/09/08 17:21:12 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class Animal
 
 		void			dbgprint(std::string type, std::string msg) const;
 		void			print(std::string type, std::string msg) const;
-		virtual void	makeSound() const = 0;
+		virtual void	makeSound() const;
 };
 
 #endif
