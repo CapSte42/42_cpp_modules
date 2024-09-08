@@ -6,7 +6,7 @@
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 20:26:34 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/08 23:29:45 by smontuor42       ###   ########.fr       */
+/*   Updated: 2024/09/09 00:17:10 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "utility.hpp"
 # include "ICharacter.hpp"
 # include <string>
+
+class ICharacter;
 
 class AMateria
 {

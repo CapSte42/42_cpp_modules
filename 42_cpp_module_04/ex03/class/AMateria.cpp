@@ -6,7 +6,7 @@
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 20:32:47 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/08 23:50:38 by smontuor42       ###   ########.fr       */
+/*   Updated: 2024/09/09 00:16:15 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ AMateria::~AMateria()
 
 AMateria	&AMateria::operator=(const AMateria &rhs)
 {
-	
+	(void)rhs;
 	return *this;
 }
 

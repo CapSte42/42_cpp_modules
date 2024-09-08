@@ -6,7 +6,7 @@
 /*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 20:17:56 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/08 23:23:35 by smontuor42       ###   ########.fr       */
+/*   Updated: 2024/09/09 00:28:11 by smontuor42       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define RESET			"\033[0m"
 
 # ifndef DEBUG
-#  define DEBUG 1
+#  define DEBUG 0
 # endif
 
 void	dbgprint(std::string color, std::string msg);
