@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smontuor42 <smontuor42@student.42.fr>      +#+  +:+       +#+        */
+/*   By: smontuor <smontuor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 00:10:18 by smontuor42        #+#    #+#             */
-/*   Updated: 2024/09/09 00:21:57 by smontuor42       ###   ########.fr       */
+/*   Updated: 2024/09/19 14:16:41 by smontuor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ void Character::equip(AMateria* m)
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
-			dbgprint(BOLDCYAN, _name + " equips " + m->getType());
+			print(BOLDCYAN, _name + " equips " + m->getType());
 			return;
 		}
 	}
-	dbgprint(BOLDYELLOW, _name + "'s inventory is full");
+	print(BOLDYELLOW, _name + "'s inventory is full");
 }
 
 
@@ -89,11 +89,11 @@ void Character::unequip(int idx)
 		_inventory[idx] = NULL;
 		std::stringstream ss;
 		ss << idx;
-		dbgprint(BOLDCYAN, _name + " unequips materia at index " + ss.str());
+		print(BOLDCYAN, _name + " unequips materia at index " + ss.str());
 	}
 	else
 	{
-		dbgprint(BOLDYELLOW, _name + " tried to unequip an invalid index");
+		print(BOLDYELLOW, _name + " tried to unequip an invalid index");
 	}
 }
 
@@ -106,6 +106,6 @@ void Character::use(int idx, ICharacter &target)
 	}
 	else
 	{
-		dbgprint(BOLDYELLOW, _name + " tried to use an invalid index");
+		print(BOLDYELLOW, _name + " tried to use an invalid index");
 	}
 }
