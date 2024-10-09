@@ -1,8 +1,10 @@
-#ifndef Bureaucrat_HPP
-# define Bureaucrat_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 # include <string>
-//# include <stdexcept>
+
+class Form;
+
 
 class Bureaucrat
 {
@@ -29,6 +31,8 @@ class Bureaucrat
 
 		void outOfRange(int grade) const;
 
+		void signForm(Form &form);
+
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -41,6 +45,7 @@ class Bureaucrat
 			public:
 				virtual const char *what() const throw();
 		};
+
 };
 
 #endif // Bureaucrat_HPP
