@@ -2,6 +2,7 @@
 #include "../includes/ShrubberyCreationForm.hpp"
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/Intern.hpp"
 #include <iostream>
 
 int main()
@@ -29,6 +30,40 @@ int main()
 		std::cout << "\n--- Testing Failure Cases ---\n" << std::endl;
 		bob.executeForm(shrubbery);  // This should fail due to low grade
 		alice.executeForm(pardon);   // This should fail since not signed
+
+		std::cout << "\n--- Testing Intern ---\n" << std::endl;
+		Intern someRandomIntern;
+		AForm *form = NULL;
+
+		form = someRandomIntern.makeForm("robotomy request", "Bender");
+		if (form)
+		{
+			john.signForm(*form);
+			john.executeForm(*form);
+			delete form;
+		}
+
+		form = someRandomIntern.makeForm("shrubbery creation", "Garden");
+		if (form)
+		{
+			alice.signForm(*form);
+			alice.executeForm(*form);
+			delete form;
+		}
+
+		form = someRandomIntern.makeForm("presidential pardon", "Ford Prefect");
+		if (form)
+		{
+			john.signForm(*form);
+			john.executeForm(*form);
+			delete form;
+		}
+
+		form = someRandomIntern.makeForm("unknown form", "Target");  // This should fail
+		if (form)
+		{
+			delete form;
+		}
 	}
 	catch (std::exception &e)
 	{
