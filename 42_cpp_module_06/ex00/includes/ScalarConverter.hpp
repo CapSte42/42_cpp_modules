@@ -9,6 +9,7 @@ class ScalarConverter
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &);
 		ScalarConverter &operator=(const ScalarConverter &);
+		~ScalarConverter();
 
 		static char convertToChar(double value);
 		static int convertToInt(double value);
