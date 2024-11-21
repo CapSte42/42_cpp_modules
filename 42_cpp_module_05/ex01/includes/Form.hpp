@@ -1,6 +1,7 @@
 #ifndef FORM_HPP
 # define FORM_HPP
 
+#include <ostream>
 # include <string>
 
 class Bureaucrat;
@@ -45,5 +46,7 @@ class Form
 				virtual const char *what() const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &out, Form const &form);
 
 #endif // Form_HPP

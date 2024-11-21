@@ -64,3 +64,9 @@ void Bureaucrat::outOfRange(int grade) const
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 }
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &beureucrat)
+{
+	os << beureucrat.getName() << ", bureaucrat grade " << beureucrat.getGrade();
+	return (os);
+}

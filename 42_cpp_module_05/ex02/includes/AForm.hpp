@@ -53,4 +53,6 @@ class AForm
 		};
 };
 
+std::ostream &operator<<(std::ostream &out, AForm const &form);
+
 #endif // AForm_HPP

@@ -82,3 +82,8 @@ void Bureaucrat::outOfRange(int grade) const
 		throw Bureaucrat::GradeTooLowException();
 }
 
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &beureucrat)
+{
+	os << beureucrat.getName() << ", bureaucrat grade " << beureucrat.getGrade();
+	return (os);
+}
